@@ -15,4 +15,4 @@ See [Benchmark Data Sets for Graph Kernels](http://graphkernels.cs.tu-dortmund.d
 
 # Contact Information
 
-If you have any questions, send an email to Christopher Morris (christopher.morris at udo.edu)
+If you have any questions, send an email to Christopher Morris (christopher.morris at udo.edu).
