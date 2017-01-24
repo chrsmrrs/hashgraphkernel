@@ -12,3 +12,7 @@ Different kernels and data sets can be selected in "hash_graph_kernels.py".
 # More Data Sets
 
 See [Benchmark Data Sets for Graph Kernels](http://graphkernels.cs.tu-dortmund.de) for more data sets.
+
+# Contact Information
+
+If you have any questions, send an email to Christopher Morris (christopher.morris at udo.edu)
