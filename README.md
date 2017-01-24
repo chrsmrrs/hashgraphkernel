@@ -8,3 +8,7 @@ $ python hash_graph_kernels.py
 ```
 
 Different kernels and data sets can be selected in "hash_graph_kernels.py".
+
+# More Data Sets
+
+See [Benchmark Data Sets for Graph Kernels](http://graphkernels.cs.tu-dortmund.de) for mor data sets.
