@@ -4,8 +4,6 @@ import scipy.sparse.csgraph as csg
 import scipy.sparse.csr as csr
 import scipy.sparse.lil as lil
 
-import numpy as np
-
 from auxiliarymethods import auxiliary_methods as aux
 
 
@@ -21,7 +19,7 @@ def shortest_path_kernel(graph_db, hashed_attributes, *kwargs):
     offset = 0
     graph_indices = []
     colors_0 = np.zeros(num_vertices, dtype=np.int64)
-    
+
     # Get labels (colors) from all graph instances
     offset = 0
     for g in graph_db:
@@ -57,7 +55,7 @@ def shortest_path_kernel(graph_db, hashed_attributes, *kwargs):
             h = colors_1[index[0]:index[1] + 1]
         d = M.shape[0]
 
-	# For each pair of vertices collect labels, hashed attributes, and shortest-path distance
+        # For each pair of vertices collect labels, hashed attributes, and shortest-path distance
         pairs = list(it.product(range(d), repeat=2))
         if use_labels:
             t = [hash((l[k], h[k], l[j], h[j], M[k][j])) for (k, j) in pairs if (k != j or ~np.isinf(M[k][j]))]
@@ -80,9 +78,9 @@ def shortest_path_kernel(graph_db, hashed_attributes, *kwargs):
     if not compute_gram_matrix:
         return lil.lil_matrix(feature_vectors, dtype=np.float64)
     else:
- 	# Make feature vectors sparse
+        # Make feature vectors sparse
         gram_matrix = csr.csr_matrix(feature_vectors, dtype=np.float64)
-	# Compute gram matrix
+        # Compute gram matrix
         gram_matrix = gram_matrix.dot(gram_matrix.T)
 
         gram_matrix = gram_matrix.toarray()

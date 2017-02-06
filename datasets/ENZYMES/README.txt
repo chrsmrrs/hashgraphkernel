@@ -1,6 +1,5 @@
 README for dataset ENZYMES
 
-
 === Usage ===
 
 This folder contains the following comma separated text files 

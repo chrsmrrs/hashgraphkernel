@@ -1,9 +1,6 @@
-import graph_tool.all as gt
 import math as m
-import scipy.sparse as sparse
-import scipy.sparse.csgraph as csg
-
 import numpy as np
+import scipy.sparse as sparse
 from sklearn import preprocessing as pre
 
 from auxiliarymethods import auxiliary_methods as aux
@@ -36,11 +33,6 @@ def hash_graph_kernel(graph_db, base_kernel, kernel_parameters, iterations=20, l
     # Normalize attributes: center to the mean and component wise scale to unit variance
     if scale_attributes:
         colors_0 = pre.scale(colors_0, axis=0)
-
-    sp_list = []
-    for i, g in enumerate(graph_db):
-        a = gt.adjacency(g)
-        sp_list.append(csg.shortest_path(a, method='J', directed=False, unweighted=True))
 
     for it in xrange(0, iterations):
         colors_hashed = aux.locally_sensitive_hashing(colors_0, dim_attributes, lsh_bin_width, sigma=sigma)

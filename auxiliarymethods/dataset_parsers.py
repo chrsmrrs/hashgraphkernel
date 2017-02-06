@@ -1,15 +1,12 @@
 import graph_tool as gt
-import os.path as path
-
 import numpy as np
+import os.path as path
 
 
 def read_txt(ds_name):
-    # s = "pygk/"
-    s = ""
     pre = ""
 
-    with open(s + "datasets/" + pre + ds_name + "/" + ds_name + "_graph_indicator.txt", "r") as f:
+    with open("datasets/" + pre + ds_name + "/" + ds_name + "_graph_indicator.txt", "r") as f:
         graph_indicator = [int(i) - 1 for i in list(f)]
     f.closed
 
@@ -37,7 +34,7 @@ def read_txt(ds_name):
         vertex_list.append(vertex_list_g)
 
     # Edges
-    with open(s + "datasets/" + pre + ds_name + "/" + ds_name + "_A.txt", "r") as f:
+    with open("datasets/" + pre + ds_name + "/" + ds_name + "_A.txt", "r") as f:
         edges = [i.split(',') for i in list(f)]
     f.closed
 
@@ -56,8 +53,8 @@ def read_txt(ds_name):
             edge_list.append(g.add_edge(e[0] - off, e[1] - off))
 
     # Node labels
-    if path.exists(s + "datasets/" + pre + ds_name + "/" + ds_name + "_node_labels.txt"):
-        with open(s + "datasets/" + pre + ds_name + "/" + ds_name + "_node_labels.txt", "r") as f:
+    if path.exists("datasets/" + pre + ds_name + "/" + ds_name + "_node_labels.txt"):
+        with open("datasets/" + pre + ds_name + "/" + ds_name + "_node_labels.txt", "r") as f:
             node_labels = [int(i) for i in list(f)]
         f.closed
 
@@ -74,8 +71,8 @@ def read_txt(ds_name):
             g.vp.nl = l_nl[g_id]
 
     # Node Attributes
-    if path.exists(s + "datasets/" + pre + ds_name + "/" + ds_name + "_node_attributes.txt"):
-        with open(s + "datasets/" + pre + ds_name + "/" + ds_name + "_node_attributes.txt", "r") as f:
+    if path.exists("datasets/" + pre + ds_name + "/" + ds_name + "_node_attributes.txt"):
+        with open("datasets/" + pre + ds_name + "/" + ds_name + "_node_attributes.txt", "r") as f:
             node_attributes = [map(float, i.split(',')) for i in list(f)]
         f.closed
 
@@ -93,8 +90,8 @@ def read_txt(ds_name):
             g.vp.na = l_na[g_id]
 
     # Edge Labels
-    if path.exists("pygk/datasets/" + ds_name + "/" + ds_name + "_edge_labels.txt"):
-        with open("pygk/datasets/" + ds_name + "/" + ds_name + "_edge_labels.txt", "r") as f:
+    if path.exists("datasets/" + ds_name + "/" + ds_name + "_edge_labels.txt"):
+        with open("datasets/" + ds_name + "/" + ds_name + "_edge_labels.txt", "r") as f:
             edge_labels = [int(i) for i in list(f)]
         f.closed
 
@@ -111,8 +108,8 @@ def read_txt(ds_name):
             g.ep.el = l_el[g_id]
 
     # Edge Attributes
-    if path.exists(s + "datasets/" + ds_name + "/" + ds_name + "_edge_attributes.txt"):
-        with open(s + "datasets/" + ds_name + "/" + ds_name + "_edge_attributes.txt", "r") as f:
+    if path.exists("datasets/" + ds_name + "/" + ds_name + "_edge_attributes.txt"):
+        with open("datasets/" + ds_name + "/" + ds_name + "_edge_attributes.txt", "r") as f:
             edge_attributes = [map(float, i.split(',')) for i in list(f)]
         f.closed
 
@@ -129,7 +126,7 @@ def read_txt(ds_name):
             g.ep.ea = l_ea[g_id]
 
     # Classes
-    with open(s + "datasets/" + pre + ds_name + "/" + ds_name + "_graph_labels.txt", "r") as f:
+    with open("datasets/" + pre + ds_name + "/" + ds_name + "_graph_labels.txt", "r") as f:
         classes = [int(i) for i in list(f)]
     f.closed
 

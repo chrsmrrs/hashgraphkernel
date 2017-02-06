@@ -1,9 +1,8 @@
 import graph_tool.all as gt
+import numpy as np
 import scipy as sp
 import scipy.sparse.csr as csr
 import scipy.sparse.lil as lil
-
-import numpy as np
 
 from auxiliarymethods import auxiliary_methods as aux
 from auxiliarymethods import log_primes_list as log_pl
