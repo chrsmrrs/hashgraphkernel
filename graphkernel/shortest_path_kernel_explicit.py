@@ -1,5 +1,10 @@
+# Copyright (c) 2017 by Christopher Morris
+# Web site: https://ls11-www.cs.uni-dortmund.de/staff/morris
+# Email: christopher.morris at udo.edu
+
 import graph_tool.all as gt
 import itertools as it
+import numpy as np
 import scipy.sparse.csgraph as csg
 import scipy.sparse.csr as csr
 import scipy.sparse.lil as lil

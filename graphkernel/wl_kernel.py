@@ -1,3 +1,7 @@
+# Copyright (c) 2017 by Christopher Morris
+# Web site: https://ls11-www.cs.uni-dortmund.de/staff/morris
+# Email: christopher.morris at udo.edu
+
 import graph_tool.all as gt
 import numpy as np
 import scipy as sp
