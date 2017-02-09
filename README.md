@@ -19,10 +19,10 @@ Please feel free to use our code. We only ask that you cite:
 1. Christopher Morris, Nils M. Kriege, Kristian Kersting, Petra Mutzel, 
     	[Faster Kernel for Graphs with Continuous Attributes via Hashing](https://arxiv.org/abs/1610.00064), *IEEE International Conference on Data Mining (ICDM)*, 2016.
       
-		@inproceedings{ahmed2015icdm,
+		@inproceedings{Morris+2016,
 		    title={Faster Kernel for Graphs with Continuous Attributes via Hashing},
-		    author={ Christopher Morris and Nils M. Kriege and Kristian Kersting and Petra Mutzel},
-		    booktitle={ICDM},
+		    author={Christopher Morris and Nils M. Kriege and Kristian Kersting and Petra Mutzel},
+		    booktitle={IEEE Iternational Conference on Data Mining (ICDM), 2016.},
 		    pages={?},
 		    year={2016}
 		}
