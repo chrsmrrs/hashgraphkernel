@@ -22,7 +22,7 @@ Please feel free to use our code. We only ask that you cite:
 		@inproceedings{Morris+2016,
 		    title={Faster Kernel for Graphs with Continuous Attributes via Hashing},
 		    author={Christopher Morris and Nils M. Kriege and Kristian Kersting and Petra Mutzel},
-		    booktitle={IEEE Iternational Conference on Data Mining (ICDM), 2016.},
+		    booktitle={IEEE Iternational Conference on Data Mining (ICDM), 2016},
 		    pages={?},
 		    year={2016}
 		}
