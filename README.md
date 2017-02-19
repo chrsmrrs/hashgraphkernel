@@ -23,7 +23,7 @@ Please feel free to use our code. We only ask that you cite:
 		    title={Faster Kernel for Graphs with Continuous Attributes via Hashing},
 		    author={Christopher Morris and Nils M. Kriege and Kristian Kersting and Petra Mutzel},
 		    booktitle={IEEE Iternational Conference on Data Mining (ICDM), 2016},
-		    pages={1095-1100},
+		    pages={1095--1100},
 		    year={2016}
 		}
 
