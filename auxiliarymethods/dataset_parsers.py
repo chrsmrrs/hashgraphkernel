@@ -62,17 +62,13 @@ def read_txt(ds_name):
             node_labels = [int(i) for i in list(f)]
         f.closed
 
-        l_nl = []
-        for i in range(num_graphs + 1):
-            g = graph_db[graph_indicator[i]]
-            l_nl.append(g.new_vertex_property("int"))
+        i = 0
+        for g in graph_db:
+            g.vp.nl = g.new_vertex_property("int")
+            for v in g.vertices():
+                g.vp.nl[v] = node_labels[i]
+                i += 1
 
-        for i, l in enumerate(node_labels):
-            g_id = graph_indicator[i]
-            g = graph_db[g_id]
-            off = offset[g_id]
-            l_nl[g_id][vertex_list[g_id][i - off]] = l
-            g.vp.nl = l_nl[g_id]
 
     # Node Attributes
     if path.exists("datasets/" + pre + ds_name + "/" + ds_name + "_node_attributes.txt"):
@@ -80,18 +76,13 @@ def read_txt(ds_name):
             node_attributes = [map(float, i.split(',')) for i in list(f)]
         f.closed
 
-        l_na = []
-        for i in range(0, num_graphs + 1):
-            g = graph_db[graph_indicator[i]]
-            l_na.append(g.new_vertex_property("vector<float>"))
+        i = 0
+        for g in graph_db:
+            g.vp.na = g.new_vertex_property("vector<float>")
+            for v in g.vertices():
+                g.vp.na[v] = node_attributes[i]
+                i += 1
 
-        for i, l in enumerate(node_attributes):
-            g_id = graph_indicator[i]
-            g = graph_db[g_id]
-            off = offset[g_id]
-            # l_na[g_id][vertex_list[g_id][i - off]] = l[0]
-            l_na[g_id][vertex_list[g_id][i - off]] = np.array(l)
-            g.vp.na = l_na[g_id]
 
     # Edge Labels
     if path.exists("datasets/" + ds_name + "/" + ds_name + "_edge_labels.txt"):
